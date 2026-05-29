@@ -1,0 +1,372 @@
+{
+  "captured_at": "2026-05-26T21:02:37.039Z",
+  "source_proofs": [
+    "cdp-alltrails-california-sanitized-2026-05-26.json",
+    "cdp-alltrails-account-sanitized-2026-05-26.json"
+  ],
+  "routes": [
+    {
+      "method": "GET",
+      "host": "www.alltrails.com",
+      "pathname": "/api/alltrails/community/blazes//v0/users/{user}/feeds/public",
+      "query_keys": [
+        "cursor",
+        "maxItems",
+        "requestedFeedItemVersions[activity:photos:uploaded]",
+        "requestedFeedItemVersions[list:item:added]",
+        "requestedFeedItemVersions[trail:photos:uploaded]"
+      ],
+      "route": "https://www.alltrails.com/api/alltrails/community/blazes//v0/users/{user}/feeds/public?cursor={value}&maxItems={value}&requestedFeedItemVersions[activity:photos:uploaded]={value}&requestedFeedItemVersions[list:item:added]={value}&requestedFeedItemVersions[trail:photos:uploaded]={value}",
+      "resource_type": "Fetch",
+      "initiator_type": "script",
+      "page_route": "https://www.alltrails.com/members/{member}",
+      "status": 200,
+      "mime_type": "application/json",
+      "response_url_route": "https://www.alltrails.com/api/alltrails/community/blazes//v0/users/{user}/feeds/public?cursor={value}&maxItems={value}&requestedFeedItemVersions[activity:photos:uploaded]={value}&requestedFeedItemVersions[list:item:added]={value}&requestedFeedItemVersions[trail:photos:uploaded]={value}",
+      "seen_count": 2,
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "host": "www.alltrails.com",
+      "pathname": "/api/alltrails/community/blazes/v0/users/{user}/feeds",
+      "query_keys": [],
+      "route": "https://www.alltrails.com/api/alltrails/community/blazes/v0/users/{user}/feeds",
+      "resource_type": "Fetch",
+      "initiator_type": "script",
+      "page_route": "https://www.alltrails.com/members/{member}",
+      "status": 200,
+      "mime_type": "application/json",
+      "response_url_route": "https://www.alltrails.com/api/alltrails/community/blazes/v0/users/{user}/feeds",
+      "seen_count": 1,
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "host": "www.alltrails.com",
+      "pathname": "/api/alltrails/community/blazes/v0/users/{user}/feeds/public",
+      "query_keys": [
+        "requestedFeedItemVersions[activity:photos:uploaded]",
+        "requestedFeedItemVersions[list:item:added]",
+        "requestedFeedItemVersions[trail:photos:uploaded]"
+      ],
+      "route": "https://www.alltrails.com/api/alltrails/community/blazes/v0/users/{user}/feeds/public?requestedFeedItemVersions[activity:photos:uploaded]={value}&requestedFeedItemVersions[list:item:added]={value}&requestedFeedItemVersions[trail:photos:uploaded]={value}",
+      "resource_type": "Fetch",
+      "initiator_type": "parser",
+      "page_route": "https://www.alltrails.com/members/{member}",
+      "status": 200,
+      "mime_type": "application/json",
+      "response_url_route": "https://www.alltrails.com/api/alltrails/community/blazes/v0/users/{user}/feeds/public?requestedFeedItemVersions[activity:photos:uploaded]={value}&requestedFeedItemVersions[list:item:added]={value}&requestedFeedItemVersions[trail:photos:uploaded]={value}",
+      "seen_count": 3,
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "host": "www.alltrails.com",
+      "pathname": "/api/alltrails/connect/users/{user}/connections",
+      "query_keys": [
+        "filter[statuses]"
+      ],
+      "route": "https://www.alltrails.com/api/alltrails/connect/users/{user}/connections?filter[statuses]={value}",
+      "resource_type": "Fetch",
+      "initiator_type": "script",
+      "page_route": "https://www.alltrails.com/members/{member}",
+      "status": 200,
+      "mime_type": "application/json",
+      "response_url_route": "https://www.alltrails.com/api/alltrails/connect/users/{user}/connections?filter[statuses]={value}",
+      "seen_count": 8,
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "host": "www.alltrails.com",
+      "pathname": "/api/alltrails/connect/users/{user}/connections/{id}",
+      "query_keys": [],
+      "route": "https://www.alltrails.com/api/alltrails/connect/users/{user}/connections/%7Bid%7D",
+      "resource_type": "Fetch",
+      "initiator_type": "script",
+      "page_route": "https://www.alltrails.com/members/{member}",
+      "status": 200,
+      "mime_type": "application/json",
+      "response_url_route": "https://www.alltrails.com/api/alltrails/connect/users/{user}/connections/%7Bid%7D",
+      "seen_count": 10,
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "host": "www.alltrails.com",
+      "pathname": "/api/alltrails/connect/v0/my/mutuals/{id}",
+      "query_keys": [],
+      "route": "https://www.alltrails.com/api/alltrails/connect/v0/my/mutuals/%7Bid%7D",
+      "resource_type": "Fetch",
+      "initiator_type": "script",
+      "page_route": "https://www.alltrails.com/members/{member}",
+      "status": 200,
+      "mime_type": "application/json",
+      "response_url_route": "https://www.alltrails.com/api/alltrails/connect/v0/my/mutuals/%7Bid%7D",
+      "seen_count": 4,
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "host": "www.alltrails.com",
+      "pathname": "/api/alltrails/geo-service/routing/info",
+      "query_keys": [],
+      "route": "https://www.alltrails.com/api/alltrails/geo-service/routing/info",
+      "resource_type": "Fetch",
+      "initiator_type": "script",
+      "page_route": "https://www.alltrails.com/explore?b_br_lat={value}&b_br_lng={value}&b_tl_lat={value}&b_tl_lng={value}",
+      "status": 200,
+      "mime_type": "application/json",
+      "response_url_route": "https://www.alltrails.com/api/alltrails/geo-service/routing/info",
+      "seen_count": 1,
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "host": "www.alltrails.com",
+      "pathname": "/api/alltrails/me",
+      "query_keys": [],
+      "route": "https://www.alltrails.com/api/alltrails/me",
+      "resource_type": "Fetch",
+      "initiator_type": "script",
+      "page_route": "https://www.alltrails.com/trail/{country}/{region}/{slug}",
+      "status": 200,
+      "mime_type": "application/json",
+      "response_url_route": "https://www.alltrails.com/api/alltrails/me",
+      "seen_count": 6,
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "host": "www.alltrails.com",
+      "pathname": "/api/alltrails/trails/{id}/photos/{photo_id}",
+      "query_keys": [
+        "landscape",
+        "limit"
+      ],
+      "route": "https://www.alltrails.com/api/alltrails/trails/%7Bid%7D/photos/{photo_id}?landscape={value}&limit={value}",
+      "resource_type": "Fetch",
+      "initiator_type": "script",
+      "page_route": "https://www.alltrails.com/trail/{country}/{region}/{slug}",
+      "status": 200,
+      "mime_type": "application/json",
+      "response_url_route": "https://www.alltrails.com/api/alltrails/trails/%7Bid%7D/photos/{photo_id}?landscape={value}&limit={value}",
+      "seen_count": 6,
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "host": "www.alltrails.com",
+      "pathname": "/api/alltrails/trails/{id}/surface_types",
+      "query_keys": [],
+      "route": "https://www.alltrails.com/api/alltrails/trails/%7Bid%7D/surface_types",
+      "resource_type": "Fetch",
+      "initiator_type": "script",
+      "page_route": "https://www.alltrails.com/trail/{country}/{region}/{slug}",
+      "status": 200,
+      "mime_type": "application/json",
+      "response_url_route": "https://www.alltrails.com/api/alltrails/trails/%7Bid%7D/surface_types",
+      "seen_count": 6,
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "host": "www.alltrails.com",
+      "pathname": "/api/alltrails/users/{user}/lists",
+      "query_keys": [
+        "api_key"
+      ],
+      "route": "https://www.alltrails.com/api/alltrails/users/{user}/lists?api_key={value}",
+      "resource_type": "Fetch",
+      "initiator_type": "script",
+      "page_route": "https://www.alltrails.com/members/{member}/lists",
+      "status": 200,
+      "mime_type": "application/json",
+      "response_url_route": "https://www.alltrails.com/api/alltrails/users/{user}/lists?api_key={value}",
+      "seen_count": 1,
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "host": "www.alltrails.com",
+      "pathname": "/api/alltrails/users/{user}/maps",
+      "query_keys": [
+        "detail",
+        "limit",
+        "presentation_type"
+      ],
+      "route": "https://www.alltrails.com/api/alltrails/users/{user}/maps?detail={value}&limit={value}&presentation_type={value}",
+      "resource_type": "Fetch",
+      "initiator_type": "script",
+      "page_route": "https://www.alltrails.com/members/{member}/custom-routes",
+      "status": 200,
+      "mime_type": "application/json",
+      "response_url_route": "https://www.alltrails.com/api/alltrails/users/{user}/maps?detail={value}&limit={value}&presentation_type={value}",
+      "seen_count": 1,
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "host": "www.alltrails.com",
+      "pathname": "/api/alltrails/users/{user}/maps",
+      "query_keys": [
+        "limit",
+        "presentation_type"
+      ],
+      "route": "https://www.alltrails.com/api/alltrails/users/{user}/maps?limit={value}&presentation_type={value}",
+      "resource_type": "Fetch",
+      "initiator_type": "script",
+      "page_route": "https://www.alltrails.com/members/{member}/recordings",
+      "status": 200,
+      "mime_type": "application/json",
+      "response_url_route": "https://www.alltrails.com/api/alltrails/users/{user}/maps?limit={value}&presentation_type={value}",
+      "seen_count": 1,
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "host": "www.alltrails.com",
+      "pathname": "/api/alltrails/users/{user}/trails/completed",
+      "query_keys": [
+        "limit"
+      ],
+      "route": "https://www.alltrails.com/api/alltrails/users/{user}/trails/completed?limit={value}",
+      "resource_type": "Fetch",
+      "initiator_type": "script",
+      "page_route": "https://www.alltrails.com/members/{member}/completed",
+      "status": 200,
+      "mime_type": "application/json",
+      "response_url_route": "https://www.alltrails.com/api/alltrails/users/{user}/trails/completed?limit={value}",
+      "seen_count": 1,
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "host": "www.alltrails.com",
+      "pathname": "/api/alltrails/v2/trails/{id}/photos",
+      "query_keys": [
+        "per_page",
+        "with_location"
+      ],
+      "route": "https://www.alltrails.com/api/alltrails/v2/trails/%7Bid%7D/photos?per_page={value}&with_location={value}",
+      "resource_type": "Fetch",
+      "initiator_type": "script",
+      "page_route": "https://www.alltrails.com/trail/{country}/{region}/{slug}",
+      "status": 200,
+      "mime_type": "application/json",
+      "response_url_route": "https://www.alltrails.com/api/alltrails/v2/trails/%7Bid%7D/photos?per_page={value}&with_location={value}",
+      "seen_count": 6,
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "host": "www.alltrails.com",
+      "pathname": "/api/alltrails/weather-service/v2/trails/{id}/overview",
+      "query_keys": [
+        "date",
+        "includeGradient",
+        "includePrecipitation",
+        "sentenceUnits"
+      ],
+      "route": "https://www.alltrails.com/api/alltrails/weather-service/v2/trails/%7Bid%7D/overview?date={value}&includeGradient={value}&includePrecipitation={value}&sentenceUnits={value}",
+      "resource_type": "Fetch",
+      "initiator_type": "script",
+      "page_route": "https://www.alltrails.com/trail/{country}/{region}/{slug}",
+      "status": 200,
+      "mime_type": "application/json",
+      "response_url_route": "https://www.alltrails.com/api/alltrails/weather-service/v2/trails/%7Bid%7D/overview?date={value}&includeGradient={value}&includePrecipitation={value}&sentenceUnits={value}",
+      "seen_count": 6,
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "method": "GET",
+      "host": "www.alltrails.com",
+      "pathname": "/api/alltrails/weather-service/v2/trails/{id}/overview",
+      "query_keys": [
+        "includeGradient",
+        "includePrecipitation",
+        "sentenceUnits"
+      ],
+      "route": "https://www.alltrails.com/api/alltrails/weather-service/v2/trails/%7Bid%7D/overview?includeGradient={value}&includePrecipitation={value}&sentenceUnits={value}",
+      "resource_type": "Fetch",
+      "initiator_type": "script",
+      "page_route": "https://www.alltrails.com/trail/{country}/{region}/{slug}",
+      "status": 200,
+      "mime_type": "application/json",
+      "response_url_route": "https://www.alltrails.com/api/alltrails/weather-service/v2/trails/%7Bid%7D/overview?includeGradient={value}&includePrecipitation={value}&sentenceUnits={value}",
+      "seen_count": 6,
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "method": "POST",
+      "host": "www.alltrails.com",
+      "pathname": "/api/alltrails/explore/v1/search",
+      "query_keys": [],
+      "route": "https://www.alltrails.com/api/alltrails/explore/v1/search",
+      "resource_type": "Fetch",
+      "initiator_type": "script",
+      "page_route": "https://www.alltrails.com/members/{member}/custom-routes",
+      "status": 200,
+      "mime_type": "application/json",
+      "response_url_route": "https://www.alltrails.com/api/alltrails/explore/v1/search",
+      "seen_count": 1,
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "method": "POST",
+      "host": "www.alltrails.com",
+      "pathname": "/api/alltrails/explore/v1/search",
+      "query_keys": [
+        "nls"
+      ],
+      "route": "https://www.alltrails.com/api/alltrails/explore/v1/search?nls={value}",
+      "resource_type": "Fetch",
+      "initiator_type": "script",
+      "page_route": "https://www.alltrails.com/explore?b_br_lat={value}&b_br_lng={value}&b_tl_lat={value}&b_tl_lng={value}",
+      "status": 200,
+      "mime_type": "application/json",
+      "response_url_route": "https://www.alltrails.com/api/alltrails/explore/v1/search?nls={value}",
+      "seen_count": 1,
+      "statuses": [
+        200
+      ]
+    }
+  ]
+}

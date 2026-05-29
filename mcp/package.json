@@ -1,0 +1,28 @@
+{
+  "name": "@zaydiscold/alltrails-cli-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "MCP server for the personal live AllTrails API map, read executor, and write tools.",
+  "bin": {
+    "alltrails-mcp": "./dist/server.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "@zaydiscold/alltrails-cli": "workspace:*",
+    "zod": "^4.4.3"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "author": "Zayd Khan (@ColdCooks / zaydiscold)",
+  "license": "MIT"
+}

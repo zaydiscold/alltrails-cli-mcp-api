@@ -1,0 +1,611 @@
+[
+  {
+    "id": "account_me_browser",
+    "family": "account",
+    "method": "GET",
+    "path": "/api/alltrails/me",
+    "summary": "Current authenticated user route observed from the logged-in browser session.",
+    "sourceLabels": [
+      "browser_observed"
+    ],
+    "risk": "read",
+    "requiresAuth": true,
+    "requiresSubscription": false,
+    "execution": "live-read",
+    "notes": "Captured from sanitized Chrome CDP artifacts cdp-alltrails-california-sanitized-2026-05-26.json and cdp-alltrails-account-sanitized-2026-05-26.json."
+  },
+  {
+    "id": "activity_detail",
+    "family": "activity",
+    "method": "GET",
+    "path": "/api/alltrails/v3/activities/{activity_id}",
+    "summary": "Read a single activity detail.",
+    "sourceLabels": [
+      "unverified"
+    ],
+    "risk": "sensitive-read",
+    "requiresAuth": true,
+    "requiresSubscription": false,
+    "execution": "plan-only"
+  },
+  {
+    "id": "activity_upload",
+    "family": "activity",
+    "method": "POST",
+    "path": "/api/alltrails/v3/activities/upload",
+    "summary": "Upload a new activity recording file.",
+    "sourceLabels": [
+      "mutation_dry_run_only",
+      "unverified"
+    ],
+    "risk": "write",
+    "requiresAuth": true,
+    "requiresSubscription": false,
+    "execution": "plan-only"
+  },
+  {
+    "id": "community_user_feeds",
+    "family": "community",
+    "method": "GET",
+    "path": "/api/alltrails/community/blazes/v0/users/{user_id}/feeds",
+    "summary": "Authenticated user community feed endpoint observed from /members/me.",
+    "sourceLabels": [
+      "browser_observed"
+    ],
+    "risk": "read",
+    "requiresAuth": true,
+    "requiresSubscription": false,
+    "execution": "live-read",
+    "notes": "Captured from sanitized Chrome CDP artifacts cdp-alltrails-california-sanitized-2026-05-26.json and cdp-alltrails-account-sanitized-2026-05-26.json."
+  },
+  {
+    "id": "community_user_public_feed",
+    "family": "community",
+    "method": "GET",
+    "path": "/api/alltrails/community/blazes/v0/users/{user_id}/feeds/public",
+    "summary": "Public feed route for a user; observed with requested feed-item version query keys.",
+    "sourceLabels": [
+      "browser_observed"
+    ],
+    "risk": "read",
+    "requiresAuth": true,
+    "requiresSubscription": false,
+    "execution": "live-read",
+    "notes": "Captured from sanitized Chrome CDP artifacts cdp-alltrails-california-sanitized-2026-05-26.json and cdp-alltrails-account-sanitized-2026-05-26.json."
+  },
+  {
+    "id": "community_user_public_feed_paged",
+    "family": "community",
+    "method": "GET",
+    "path": "/api/alltrails/community/blazes//v0/users/{user_id}/feeds/public",
+    "summary": "Paged public feed variant observed exactly with a double slash before v0.",
+    "sourceLabels": [
+      "browser_observed"
+    ],
+    "risk": "read",
+    "requiresAuth": true,
+    "requiresSubscription": false,
+    "execution": "live-read",
+    "notes": "Captured from sanitized Chrome CDP artifacts cdp-alltrails-california-sanitized-2026-05-26.json and cdp-alltrails-account-sanitized-2026-05-26.json."
+  },
+  {
+    "id": "connect_my_mutuals",
+    "family": "social",
+    "method": "GET",
+    "path": "/api/alltrails/connect/v0/my/mutuals/{user_id}",
+    "summary": "Authenticated mutual-connection route observed from member/account pages.",
+    "sourceLabels": [
+      "browser_observed"
+    ],
+    "risk": "read",
+    "requiresAuth": true,
+    "requiresSubscription": false,
+    "execution": "live-read",
+    "notes": "Captured from sanitized Chrome CDP artifacts cdp-alltrails-california-sanitized-2026-05-26.json and cdp-alltrails-account-sanitized-2026-05-26.json."
+  },
+  {
+    "id": "connect_user_connection_detail",
+    "family": "social",
+    "method": "GET",
+    "path": "/api/alltrails/connect/users/{user_id}/connections/{connection_id}",
+    "summary": "Single connection detail route observed from member/account pages.",
+    "sourceLabels": [
+      "browser_observed"
+    ],
+    "risk": "read",
+    "requiresAuth": true,
+    "requiresSubscription": false,
+    "execution": "live-read",
+    "notes": "Captured from sanitized Chrome CDP artifacts cdp-alltrails-california-sanitized-2026-05-26.json and cdp-alltrails-account-sanitized-2026-05-26.json."
+  },
+  {
+    "id": "connect_user_connections",
+    "family": "social",
+    "method": "GET",
+    "path": "/api/alltrails/connect/users/{user_id}/connections",
+    "summary": "Connection list route observed from member/account pages.",
+    "sourceLabels": [
+      "browser_observed"
+    ],
+    "risk": "read",
+    "requiresAuth": true,
+    "requiresSubscription": false,
+    "execution": "live-read",
+    "notes": "Captured from sanitized Chrome CDP artifacts cdp-alltrails-california-sanitized-2026-05-26.json and cdp-alltrails-account-sanitized-2026-05-26.json."
+  },
+  {
+    "id": "explore_search_v1",
+    "family": "search",
+    "method": "POST",
+    "path": "/api/alltrails/explore/v1/search",
+    "summary": "Explore and custom-route search endpoint observed during logged-in California/explore capture. POST is read-only search in this context.",
+    "sourceLabels": [
+      "browser_observed"
+    ],
+    "risk": "read",
+    "requiresAuth": false,
+    "requiresSubscription": false,
+    "execution": "live-read",
+    "notes": "Captured from sanitized Chrome CDP artifacts cdp-alltrails-california-sanitized-2026-05-26.json and cdp-alltrails-account-sanitized-2026-05-26.json."
+  },
+  {
+    "id": "feed",
+    "family": "social",
+    "method": "GET",
+    "path": "/api/alltrails/v3/feed/",
+    "summary": "Read authenticated activity feed.",
+    "sourceLabels": [
+      "unverified"
+    ],
+    "risk": "sensitive-read",
+    "requiresAuth": true,
+    "requiresSubscription": false,
+    "execution": "plan-only"
+  },
+  {
+    "id": "friends",
+    "family": "social",
+    "method": "GET",
+    "path": "/api/alltrails/v3/friends/",
+    "summary": "Read friends/follow graph.",
+    "sourceLabels": [
+      "unverified"
+    ],
+    "risk": "sensitive-read",
+    "requiresAuth": true,
+    "requiresSubscription": false,
+    "execution": "plan-only"
+  },
+  {
+    "id": "geo_routing_info",
+    "family": "geo",
+    "method": "GET",
+    "path": "/api/alltrails/geo-service/routing/info",
+    "summary": "Routing service metadata used by explore/map surfaces.",
+    "sourceLabels": [
+      "browser_observed"
+    ],
+    "risk": "read",
+    "requiresAuth": false,
+    "requiresSubscription": false,
+    "execution": "live-read",
+    "notes": "Captured from sanitized Chrome CDP artifacts cdp-alltrails-california-sanitized-2026-05-26.json and cdp-alltrails-account-sanitized-2026-05-26.json."
+  },
+  {
+    "id": "list_detail",
+    "family": "list",
+    "method": "GET",
+    "path": "/api/alltrails/v3/lists/{list_id}",
+    "summary": "Read a curated or user list.",
+    "sourceLabels": [
+      "unverified"
+    ],
+    "risk": "read",
+    "requiresAuth": false,
+    "requiresSubscription": false,
+    "execution": "plan-only"
+  },
+  {
+    "id": "map_3d_trail",
+    "family": "map",
+    "method": "GET",
+    "path": "/api/alltrails/v3/maps/3d/{trail_id}",
+    "summary": "Read 3D map tile metadata for a trail.",
+    "sourceLabels": [
+      "subscription_gated",
+      "unverified"
+    ],
+    "risk": "sensitive-read",
+    "requiresAuth": true,
+    "requiresSubscription": true,
+    "execution": "plan-only"
+  },
+  {
+    "id": "me",
+    "family": "account",
+    "method": "GET",
+    "path": "/api/alltrails/v3/user/me/",
+    "summary": "Read the current authenticated user profile.",
+    "sourceLabels": [
+      "unverified"
+    ],
+    "risk": "sensitive-read",
+    "requiresAuth": true,
+    "requiresSubscription": false,
+    "execution": "plan-only"
+  },
+  {
+    "id": "offline_map_region",
+    "family": "map",
+    "method": "GET",
+    "path": "/api/alltrails/v3/maps/offline/{region}",
+    "summary": "Read offline-map metadata for a region.",
+    "sourceLabels": [
+      "subscription_gated",
+      "unverified"
+    ],
+    "risk": "sensitive-read",
+    "requiresAuth": true,
+    "requiresSubscription": true,
+    "execution": "plan-only"
+  },
+  {
+    "id": "park_detail",
+    "family": "park",
+    "method": "GET",
+    "path": "/api/alltrails/v3/parks/{park_id}",
+    "summary": "Read a park detail payload.",
+    "sourceLabels": [
+      "browser_observed",
+      "unverified"
+    ],
+    "risk": "read",
+    "requiresAuth": false,
+    "requiresSubscription": false,
+    "execution": "plan-only"
+  },
+  {
+    "id": "region_detail",
+    "family": "region",
+    "method": "GET",
+    "path": "/api/alltrails/v3/regions/{slug}",
+    "summary": "Read a region detail payload.",
+    "sourceLabels": [
+      "browser_observed",
+      "unverified"
+    ],
+    "risk": "read",
+    "requiresAuth": false,
+    "requiresSubscription": false,
+    "execution": "plan-only"
+  },
+  {
+    "id": "review_comments",
+    "family": "social",
+    "method": "GET",
+    "path": "/api/alltrails/v3/reviews/{review_id}/comments",
+    "summary": "Read comments on a review.",
+    "sourceLabels": [
+      "unverified"
+    ],
+    "risk": "read",
+    "requiresAuth": false,
+    "requiresSubscription": false,
+    "execution": "plan-only"
+  },
+  {
+    "id": "review_likes",
+    "family": "social",
+    "method": "POST",
+    "path": "/api/alltrails/v3/reviews/{review_id}/likes",
+    "summary": "Like a review.",
+    "sourceLabels": [
+      "mutation_dry_run_only",
+      "unverified"
+    ],
+    "risk": "write",
+    "requiresAuth": true,
+    "requiresSubscription": false,
+    "execution": "plan-only"
+  },
+  {
+    "id": "trail_detail",
+    "family": "trail",
+    "method": "GET",
+    "path": "/api/alltrails/v3/trails/{trail_id}",
+    "summary": "Read full trail detail.",
+    "sourceLabels": [
+      "community_inferred"
+    ],
+    "risk": "read",
+    "requiresAuth": false,
+    "requiresSubscription": false,
+    "execution": "plan-only",
+    "notes": "Community GPX projects confirm the v3 trail-detail family."
+  },
+  {
+    "id": "trail_detail_offline",
+    "family": "trail",
+    "method": "GET",
+    "path": "/api/alltrails/v3/trails/{trail_id}",
+    "queryTemplate": {
+      "detail": "offline"
+    },
+    "summary": "Read trail detail with offline geometry payload.",
+    "sourceLabels": [
+      "community_inferred",
+      "subscription_gated"
+    ],
+    "risk": "read",
+    "requiresAuth": false,
+    "requiresSubscription": true,
+    "execution": "plan-only",
+    "notes": "Confirmed by community code as GET /api/alltrails/v3/trails/{id}?detail=offline."
+  },
+  {
+    "id": "trail_elevation",
+    "family": "trail",
+    "method": "GET",
+    "path": "/api/alltrails/v3/trails/{trail_id}/elevation_profile",
+    "summary": "Read trail elevation profile.",
+    "sourceLabels": [
+      "unverified"
+    ],
+    "risk": "read",
+    "requiresAuth": false,
+    "requiresSubscription": false,
+    "execution": "plan-only"
+  },
+  {
+    "id": "trail_gpx",
+    "family": "export",
+    "method": "GET",
+    "path": "/api/alltrails/v3/trails/{trail_id}/gpx",
+    "summary": "Download/export a trail GPX payload.",
+    "sourceLabels": [
+      "official_export",
+      "subscription_gated",
+      "unverified"
+    ],
+    "risk": "sensitive-read",
+    "requiresAuth": true,
+    "requiresSubscription": true,
+    "execution": "plan-only",
+    "notes": "Official help documents trail export from the web UI; API path remains a reverse-engineering target."
+  },
+  {
+    "id": "trail_photo_detail",
+    "family": "trail",
+    "method": "GET",
+    "path": "/api/alltrails/trails/{trail_id}/photos/{photo_id}",
+    "summary": "Trail photo detail/list endpoint observed with landscape and limit query keys.",
+    "sourceLabels": [
+      "browser_observed"
+    ],
+    "risk": "read",
+    "requiresAuth": false,
+    "requiresSubscription": false,
+    "execution": "live-read",
+    "notes": "Captured from sanitized Chrome CDP artifacts cdp-alltrails-california-sanitized-2026-05-26.json and cdp-alltrails-account-sanitized-2026-05-26.json."
+  },
+  {
+    "id": "trail_photos",
+    "family": "trail",
+    "method": "GET",
+    "path": "/api/alltrails/v3/trails/{trail_id}/photos",
+    "summary": "Read photos for a trail.",
+    "sourceLabels": [
+      "unverified"
+    ],
+    "risk": "read",
+    "requiresAuth": false,
+    "requiresSubscription": false,
+    "execution": "plan-only"
+  },
+  {
+    "id": "trail_recordings",
+    "family": "trail",
+    "method": "GET",
+    "path": "/api/alltrails/v3/trails/{trail_id}/recordings",
+    "summary": "Read public/community GPS recordings for a trail.",
+    "sourceLabels": [
+      "browser_observed",
+      "unverified"
+    ],
+    "risk": "read",
+    "requiresAuth": false,
+    "requiresSubscription": false,
+    "execution": "plan-only",
+    "notes": "Public DOM exposed /explore/recording/:slug links; API endpoint remains unverified."
+  },
+  {
+    "id": "trail_reviews",
+    "family": "trail",
+    "method": "GET",
+    "path": "/api/alltrails/v3/trails/{trail_id}/reviews",
+    "summary": "Read reviews for a trail.",
+    "sourceLabels": [
+      "unverified"
+    ],
+    "risk": "read",
+    "requiresAuth": false,
+    "requiresSubscription": false,
+    "execution": "plan-only"
+  },
+  {
+    "id": "trail_search",
+    "family": "trail",
+    "method": "GET",
+    "path": "/api/alltrails/v3/trails/search",
+    "summary": "Search trails by text and/or coordinates.",
+    "sourceLabels": [
+      "unverified"
+    ],
+    "risk": "read",
+    "requiresAuth": false,
+    "requiresSubscription": false,
+    "execution": "plan-only",
+    "notes": "Estimated route from goal inventory; browser network capture still needed for exact query shape."
+  },
+  {
+    "id": "trail_surface_types",
+    "family": "trail",
+    "method": "GET",
+    "path": "/api/alltrails/trails/{trail_id}/surface_types",
+    "summary": "Trail surface-type metadata observed from trail detail pages.",
+    "sourceLabels": [
+      "browser_observed"
+    ],
+    "risk": "read",
+    "requiresAuth": false,
+    "requiresSubscription": false,
+    "execution": "live-read",
+    "notes": "Captured from sanitized Chrome CDP artifacts cdp-alltrails-california-sanitized-2026-05-26.json and cdp-alltrails-account-sanitized-2026-05-26.json."
+  },
+  {
+    "id": "trail_v2_photos",
+    "family": "trail",
+    "method": "GET",
+    "path": "/api/alltrails/v2/trails/{trail_id}/photos",
+    "summary": "Trail photo list v2 endpoint observed from trail detail pages.",
+    "sourceLabels": [
+      "browser_observed"
+    ],
+    "risk": "read",
+    "requiresAuth": false,
+    "requiresSubscription": false,
+    "execution": "live-read",
+    "notes": "Captured from sanitized Chrome CDP artifacts cdp-alltrails-california-sanitized-2026-05-26.json and cdp-alltrails-account-sanitized-2026-05-26.json."
+  },
+  {
+    "id": "trail_weather_overview",
+    "family": "weather",
+    "method": "GET",
+    "path": "/api/alltrails/weather-service/v2/trails/{trail_id}/overview",
+    "summary": "Trail weather overview endpoint observed from detail pages.",
+    "sourceLabels": [
+      "browser_observed"
+    ],
+    "risk": "read",
+    "requiresAuth": false,
+    "requiresSubscription": false,
+    "execution": "live-read",
+    "notes": "Captured from sanitized Chrome CDP artifacts cdp-alltrails-california-sanitized-2026-05-26.json and cdp-alltrails-account-sanitized-2026-05-26.json."
+  },
+  {
+    "id": "user_activities",
+    "family": "activity",
+    "method": "GET",
+    "path": "/api/alltrails/v3/user/{user_id}/activities",
+    "summary": "Read a user's activity list.",
+    "sourceLabels": [
+      "unverified"
+    ],
+    "risk": "sensitive-read",
+    "requiresAuth": true,
+    "requiresSubscription": false,
+    "execution": "plan-only"
+  },
+  {
+    "id": "user_completed",
+    "family": "activity",
+    "method": "GET",
+    "path": "/api/alltrails/v3/user/{user_id}/completed",
+    "summary": "Read completed trails.",
+    "sourceLabels": [
+      "unverified"
+    ],
+    "risk": "sensitive-read",
+    "requiresAuth": true,
+    "requiresSubscription": false,
+    "execution": "plan-only"
+  },
+  {
+    "id": "user_completed_trails_browser",
+    "family": "activity",
+    "method": "GET",
+    "path": "/api/alltrails/users/{user_id}/trails/completed",
+    "summary": "Observed completed trails endpoint from /members/me/completed.",
+    "sourceLabels": [
+      "browser_observed"
+    ],
+    "risk": "read",
+    "requiresAuth": true,
+    "requiresSubscription": false,
+    "execution": "live-read",
+    "notes": "Captured from sanitized Chrome CDP artifacts cdp-alltrails-california-sanitized-2026-05-26.json and cdp-alltrails-account-sanitized-2026-05-26.json."
+  },
+  {
+    "id": "user_favorites",
+    "family": "list",
+    "method": "GET",
+    "path": "/api/alltrails/v3/user/{user_id}/favorites",
+    "summary": "Read saved/favorite trails.",
+    "sourceLabels": [
+      "unverified"
+    ],
+    "risk": "sensitive-read",
+    "requiresAuth": true,
+    "requiresSubscription": false,
+    "execution": "plan-only"
+  },
+  {
+    "id": "user_lists",
+    "family": "list",
+    "method": "GET",
+    "path": "/api/alltrails/v3/user/{user_id}/lists",
+    "summary": "Read a user's lists.",
+    "sourceLabels": [
+      "unverified"
+    ],
+    "risk": "sensitive-read",
+    "requiresAuth": true,
+    "requiresSubscription": false,
+    "execution": "plan-only"
+  },
+  {
+    "id": "user_lists_browser",
+    "family": "list",
+    "method": "GET",
+    "path": "/api/alltrails/users/{user_id}/lists",
+    "summary": "Observed current/user lists endpoint from logged-in member pages.",
+    "sourceLabels": [
+      "browser_observed"
+    ],
+    "risk": "read",
+    "requiresAuth": true,
+    "requiresSubscription": false,
+    "execution": "live-read",
+    "notes": "Captured from sanitized Chrome CDP artifacts cdp-alltrails-california-sanitized-2026-05-26.json and cdp-alltrails-account-sanitized-2026-05-26.json."
+  },
+  {
+    "id": "user_maps_browser",
+    "family": "map",
+    "method": "GET",
+    "path": "/api/alltrails/users/{user_id}/maps",
+    "summary": "Observed current/user maps endpoint from logged-in member pages.",
+    "sourceLabels": [
+      "browser_observed"
+    ],
+    "risk": "read",
+    "requiresAuth": true,
+    "requiresSubscription": false,
+    "execution": "live-read",
+    "notes": "Captured from sanitized Chrome CDP artifacts cdp-alltrails-california-sanitized-2026-05-26.json and cdp-alltrails-account-sanitized-2026-05-26.json."
+  },
+  {
+    "id": "weather",
+    "family": "weather",
+    "method": "GET",
+    "path": "/api/alltrails/v3/weather/{lat}/{lng}",
+    "summary": "Read weather overlay for a coordinate.",
+    "sourceLabels": [
+      "subscription_gated",
+      "unverified"
+    ],
+    "risk": "read",
+    "requiresAuth": false,
+    "requiresSubscription": true,
+    "execution": "plan-only"
+  }
+]

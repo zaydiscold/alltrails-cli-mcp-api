@@ -1,0 +1,516 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "AllTrails API Map (Unofficial)",
+    "version": "0.1.0",
+    "description": "Evidence-labeled, live-capable route map for AllTrails browser/mobile surfaces. Unofficial and not affiliated with AllTrails; not an official API contract."
+  },
+  "servers": [
+    {
+      "url": "https://www.alltrails.com"
+    }
+  ],
+  "paths": {
+    "/api/alltrails/v3/trails/{trail_id}": {
+      "get": {
+        "summary": "Trail detail payload",
+        "parameters": [
+          {
+            "name": "trail_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "detail",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "offline"
+              ]
+            }
+          }
+        ],
+        "x-labels": [
+          "community_inferred",
+          "browser_observed"
+        ]
+      }
+    },
+    "/api/alltrails/v3/trails/{trail_id}/static_map": {
+      "get": {
+        "summary": "Trail static map image metadata/render endpoint",
+        "x-labels": [
+          "browser_observed"
+        ]
+      }
+    },
+    "/api/alltrails/v3/maps/{map_id}/static_map": {
+      "get": {
+        "summary": "Map static image metadata/render endpoint",
+        "x-labels": [
+          "browser_observed",
+          "subscription_gated"
+        ]
+      }
+    },
+    "/api/alltrails/v3/trails/search": {
+      "get": {
+        "summary": "Trail search by text, location, and filters",
+        "x-labels": [
+          "unverified"
+        ]
+      }
+    },
+    "/api/alltrails/v3/user/me": {
+      "get": {
+        "summary": "Current account profile",
+        "x-labels": [
+          "unverified"
+        ]
+      }
+    },
+    "/api/alltrails/v3/user/{user_id}/activities": {
+      "get": {
+        "summary": "User activity list",
+        "x-labels": [
+          "unverified"
+        ]
+      }
+    },
+    "/api/alltrails/v3/activities/{activity_id}": {
+      "get": {
+        "summary": "Activity detail with GPS/stat surfaces",
+        "x-labels": [
+          "unverified"
+        ]
+      }
+    },
+    "/api/alltrails/v3/activities/upload": {
+      "post": {
+        "summary": "Upload a new activity recording",
+        "x-labels": [
+          "mutation_unverified",
+          "unverified"
+        ]
+      }
+    },
+    "/api/alltrails/v3/maps/offline/{region}": {
+      "get": {
+        "summary": "Offline map metadata",
+        "x-labels": [
+          "subscription_gated",
+          "unverified"
+        ]
+      }
+    },
+    "/api/alltrails/explore/v1/search": {
+      "post": {
+        "summary": "Explore and custom-route search endpoint observed during logged-in California/explore capture. POST is read-only search in this context.",
+        "operationId": "exploreSearchV1",
+        "x-risk-level": "read",
+        "x-mutation": false,
+        "x-evidence": [
+          "browser_observed"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Observed/sanitized AllTrails response shape; body not stored in repo."
+          }
+        }
+      }
+    },
+    "/api/alltrails/me": {
+      "get": {
+        "summary": "Current authenticated user route observed from the logged-in browser session.",
+        "operationId": "accountMeBrowser",
+        "x-risk-level": "read",
+        "x-mutation": false,
+        "x-evidence": [
+          "browser_observed"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Observed/sanitized AllTrails response shape; body not stored in repo."
+          }
+        }
+      }
+    },
+    "/api/alltrails/geo-service/routing/info": {
+      "get": {
+        "summary": "Routing service metadata used by explore/map surfaces.",
+        "operationId": "geoRoutingInfo",
+        "x-risk-level": "read",
+        "x-mutation": false,
+        "x-evidence": [
+          "browser_observed"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Observed/sanitized AllTrails response shape; body not stored in repo."
+          }
+        }
+      }
+    },
+    "/api/alltrails/trails/{trail_id}/surface_types": {
+      "get": {
+        "summary": "Trail surface-type metadata observed from trail detail pages.",
+        "operationId": "trailSurfaceTypes",
+        "x-risk-level": "read",
+        "x-mutation": false,
+        "x-evidence": [
+          "browser_observed"
+        ],
+        "parameters": [
+          {
+            "name": "trail_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Observed/sanitized AllTrails response shape; body not stored in repo."
+          }
+        }
+      }
+    },
+    "/api/alltrails/v2/trails/{trail_id}/photos": {
+      "get": {
+        "summary": "Trail photo list v2 endpoint observed from trail detail pages.",
+        "operationId": "trailV2Photos",
+        "x-risk-level": "read",
+        "x-mutation": false,
+        "x-evidence": [
+          "browser_observed"
+        ],
+        "parameters": [
+          {
+            "name": "trail_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Observed/sanitized AllTrails response shape; body not stored in repo."
+          }
+        }
+      }
+    },
+    "/api/alltrails/trails/{trail_id}/photos/{photo_id}": {
+      "get": {
+        "summary": "Trail photo detail/list endpoint observed with landscape and limit query keys.",
+        "operationId": "trailPhotoDetail",
+        "x-risk-level": "read",
+        "x-mutation": false,
+        "x-evidence": [
+          "browser_observed"
+        ],
+        "parameters": [
+          {
+            "name": "trail_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "photo_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Observed/sanitized AllTrails response shape; body not stored in repo."
+          }
+        }
+      }
+    },
+    "/api/alltrails/weather-service/v2/trails/{trail_id}/overview": {
+      "get": {
+        "summary": "Trail weather overview endpoint observed from detail pages.",
+        "operationId": "trailWeatherOverview",
+        "x-risk-level": "read",
+        "x-mutation": false,
+        "x-evidence": [
+          "browser_observed"
+        ],
+        "parameters": [
+          {
+            "name": "trail_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Observed/sanitized AllTrails response shape; body not stored in repo."
+          }
+        }
+      }
+    },
+    "/api/alltrails/community/blazes/v0/users/{user_id}/feeds": {
+      "get": {
+        "summary": "Authenticated user community feed endpoint observed from /members/me.",
+        "operationId": "communityUserFeeds",
+        "x-risk-level": "read",
+        "x-mutation": false,
+        "x-evidence": [
+          "browser_observed"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Observed/sanitized AllTrails response shape; body not stored in repo."
+          }
+        }
+      }
+    },
+    "/api/alltrails/community/blazes/v0/users/{user_id}/feeds/public": {
+      "get": {
+        "summary": "Public feed route for a user; observed with requested feed-item version query keys.",
+        "operationId": "communityUserPublicFeed",
+        "x-risk-level": "read",
+        "x-mutation": false,
+        "x-evidence": [
+          "browser_observed"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Observed/sanitized AllTrails response shape; body not stored in repo."
+          }
+        }
+      }
+    },
+    "/api/alltrails/community/blazes//v0/users/{user_id}/feeds/public": {
+      "get": {
+        "summary": "Paged public feed variant observed exactly with a double slash before v0.",
+        "operationId": "communityUserPublicFeedPaged",
+        "x-risk-level": "read",
+        "x-mutation": false,
+        "x-evidence": [
+          "browser_observed"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Observed/sanitized AllTrails response shape; body not stored in repo."
+          }
+        }
+      }
+    },
+    "/api/alltrails/connect/users/{user_id}/connections": {
+      "get": {
+        "summary": "Connection list route observed from member/account pages.",
+        "operationId": "connectUserConnections",
+        "x-risk-level": "read",
+        "x-mutation": false,
+        "x-evidence": [
+          "browser_observed"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Observed/sanitized AllTrails response shape; body not stored in repo."
+          }
+        }
+      }
+    },
+    "/api/alltrails/connect/users/{user_id}/connections/{connection_id}": {
+      "get": {
+        "summary": "Single connection detail route observed from member/account pages.",
+        "operationId": "connectUserConnectionDetail",
+        "x-risk-level": "read",
+        "x-mutation": false,
+        "x-evidence": [
+          "browser_observed"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connection_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Observed/sanitized AllTrails response shape; body not stored in repo."
+          }
+        }
+      }
+    },
+    "/api/alltrails/connect/v0/my/mutuals/{user_id}": {
+      "get": {
+        "summary": "Authenticated mutual-connection route observed from member/account pages.",
+        "operationId": "connectMyMutuals",
+        "x-risk-level": "read",
+        "x-mutation": false,
+        "x-evidence": [
+          "browser_observed"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Observed/sanitized AllTrails response shape; body not stored in repo."
+          }
+        }
+      }
+    },
+    "/api/alltrails/users/{user_id}/lists": {
+      "get": {
+        "summary": "Observed current/user lists endpoint from logged-in member pages.",
+        "operationId": "userListsBrowser",
+        "x-risk-level": "read",
+        "x-mutation": false,
+        "x-evidence": [
+          "browser_observed"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Observed/sanitized AllTrails response shape; body not stored in repo."
+          }
+        }
+      }
+    },
+    "/api/alltrails/users/{user_id}/maps": {
+      "get": {
+        "summary": "Observed current/user maps endpoint from logged-in member pages.",
+        "operationId": "userMapsBrowser",
+        "x-risk-level": "read",
+        "x-mutation": false,
+        "x-evidence": [
+          "browser_observed"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Observed/sanitized AllTrails response shape; body not stored in repo."
+          }
+        }
+      }
+    },
+    "/api/alltrails/users/{user_id}/trails/completed": {
+      "get": {
+        "summary": "Observed completed trails endpoint from /members/me/completed.",
+        "operationId": "userCompletedTrailsBrowser",
+        "x-risk-level": "read",
+        "x-mutation": false,
+        "x-evidence": [
+          "browser_observed"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Observed/sanitized AllTrails response shape; body not stored in repo."
+          }
+        }
+      }
+    }
+  }
+}
