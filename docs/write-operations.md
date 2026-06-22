@@ -2,7 +2,7 @@
 
 Checked: 2026-05-26
 
-This is the personal `zaydiscold/alltrails-cli` package. It is live-capable by default.
+This is the personal `zaydiscold/alltrails-cli-mcp-api` package. It is live-capable by default.
 
 ## Behavior
 
