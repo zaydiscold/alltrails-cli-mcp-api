@@ -1,4 +1,4 @@
-# AllTrails CLI
+# AllTrails CLI (MCP + API)
 
 I wanted my AllTrails data — trails, maps, GPS routes, my own recordings and activities — reachable from the terminal and from agents instead of locked inside the app. AllTrails has no public developer API, so I mapped the routes the web and mobile clients actually use, then built a small TypeScript CLI and MCP server on top of that map.
 
